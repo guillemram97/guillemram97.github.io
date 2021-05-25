@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/home/static/css/main.f5497eb8.chunk.css",
+    "main.js": "/home/static/js/main.2d6e285f.chunk.js",
+    "main.js.map": "/home/static/js/main.2d6e285f.chunk.js.map",
+    "runtime-main.js": "/home/static/js/runtime-main.3c590061.js",
+    "runtime-main.js.map": "/home/static/js/runtime-main.3c590061.js.map",
+    "static/js/2.41ccced1.chunk.js": "/home/static/js/2.41ccced1.chunk.js",
+    "static/js/2.41ccced1.chunk.js.map": "/home/static/js/2.41ccced1.chunk.js.map",
+    "index.html": "/home/index.html",
+    "precache-manifest.86b90ae1937c5eca57bff16b45180cec.js": "/home/precache-manifest.86b90ae1937c5eca57bff16b45180cec.js",
+    "service-worker.js": "/home/service-worker.js",
+    "static/css/main.f5497eb8.chunk.css.map": "/home/static/css/main.f5497eb8.chunk.css.map",
+    "static/js/2.41ccced1.chunk.js.LICENSE.txt": "/home/static/js/2.41ccced1.chunk.js.LICENSE.txt",
+    "static/media/aicoliseum.png": "/home/static/media/aicoliseum.79f20060.png",
+    "static/media/audiochunks.png": "/home/static/media/audiochunks.2c3aa38d.png",
+    "static/media/epicgame.png": "/home/static/media/epicgame.62240d82.png",
+    "static/media/guillemrams.png": "/home/static/media/guillemrams.6c7b7321.png",
+    "static/media/hashirshoaeb.png": "/home/static/media/hashirshoaeb.32f6b574.png",
+    "static/media/resume.pdf": "/home/static/media/resume.97264028.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3c590061.js",
+    "static/js/2.41ccced1.chunk.js",
+    "static/css/main.f5497eb8.chunk.css",
+    "static/js/main.2d6e285f.chunk.js"
+  ]
+}
