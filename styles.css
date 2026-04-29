@@ -218,6 +218,11 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .intro img {
+    width: min(220px, 68%);
+    margin: 24px auto 0;
+  }
+
   .site-header .wrap {
     align-items: flex-start;
     flex-direction: column;
