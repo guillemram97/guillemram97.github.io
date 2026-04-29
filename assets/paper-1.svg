@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Paper placeholder one">
+  <rect width="800" height="500" fill="#e8eef3" />
+  <rect x="70" y="80" width="660" height="340" rx="14" fill="#b8cad8" />
+  <text x="400" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="48" fill="#254556">Paper Image 1</text>
+</svg>

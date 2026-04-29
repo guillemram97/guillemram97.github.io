@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Controlling What You Share: Assessing Language Model Adherence to Privacy Preferences",
+    "authors": "G Ramírez, A Birch, I Titov",
+    "summary": "How can you use external LLMs without giving away more personal information than you’re comfortable with? We introduce “privacy profiles”—natural-language instructions where you say what should stay private- and PEEP, a dataset of 15,000 real user queries with private information. A small local model uses these preferences to rewrite your query before sending it to a larger external model. The results are promising—especially after training—: 8B models can outperform few-shot 70B!",
+    "venue": "ACL Findings 2026",
+    "image": "assets/incognito.png",
+    "blogLink": "/blog/posts/privacy-profiles-llm-privacy.html",
+    "datasetLink": "https://huggingface.co/datasets/guillemram97/PEEP",
+    "paperLink": "https://arxiv.org/abs/2507.05391"
+  },
+  {
+    "title": "Omnilingual SONAR: Cross-Lingual and Cross-Modal Sentence Embeddings Bridging Massively Multilingual Text and Speech",
+    "authors": "JM Janeiro, PLH Cabot, I Tsiamas, Y Meng, V Iyer, G Ramírez, L Barrault et al",
+    "summary": "During my internship at FAIR I was the main contributor of OmniSONAR-Token, an adaptation of the OmniSONAR sentence encoder that provides enhanced cross-lingual token-level representations.",
+    "venue": "pre-print",
+    "image": "assets/Logo_omniSONAR-01.pdf.png",
+    "mediaClass": "media-omnisonar",
+    "blogLink": "https://ai.meta.com/research/publications/omnilingual-sonar-cross-lingual-and-cross-modal-sentence-embeddings-bridging-massively-multilingual-text-and-speech/",
+    "paperLink": "https://arxiv.org/pdf/2603.16606"
+  },
+  {
+    "title": "Optimising Calls to Large Language Models with Uncertainty-Based Two-Tier Selection",
+    "authors": "G Ramírez, A Birch, I Titov",
+    "summary": "Choosing between smaller, cheaper models and larger, more capable ones is a persistent tradeoff when building with LLMs. We show that a model's own output uncertainty — measured through its logits — is a reliable signal for deciding when to escalate to a more powerful model. This lightweight routing strategy consistently outperforms more complex neural approaches, at a fraction of the cost and with far less overhead.",
+    "venue": "COLM 2024",
+    "image": "assets/colm-nouo.png",
+    "paperLink": "https://arxiv.org/abs/2405.02134"
+  },
+  {
+    "title": "Cache & Distil: Optimising API Calls to Large Language Models",
+    "authors": "G Ramírez, M Lindemann, A Birch, I Titov",
+    "summary": "Instead of always calling a large (and expensive) Language Model, you can rely on a smaller one most of the time and only “ask for help” when it really matters. The smaller model gradually learns from those high-quality responses (Knowledge Distillation), becoming better over time and handling more queries on its own. The key is deciding when to trust the smaller model and when to call the bigger one—and smart strategies for this can significantly cut costs while keeping performance high.",
+    "venue": "ACL Findings 2024",
+    "image": "assets/cache-brachis.png",
+    "paperLink": "https://aclanthology.org/2024.findings-acl.704/"
+  },
+  {
+    "title": "On a Novel Application of Wasserstein-Procrustes for Unsupervised Cross-Lingual Alignment of Embeddings",
+    "authors": "G Ramírez, R Dangovski, P Nakov, M Soljačić",
+    "summary": "Many methods for aligning word embeddings across languages are actually optimizing the same underlying objective, even if they look different on the surface. We show that by directly solving this Wasserstein-Procrustes problem with a simple iterative approach, we can improve existing alignment techniques. This leads to better cross-lingual performance without needing labeled data.",
+    "venue": "BUCC Workshop @ COLING 2024",
+    "image": "assets/wasserstein.png",
+    "paperLink": "https://aclanthology.org/2024.bucc-1.1.pdf"
+  }
+]

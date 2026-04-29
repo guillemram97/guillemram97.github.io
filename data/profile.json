@@ -1,0 +1,11 @@
+{
+  "name": "Guillem Ramirez Santos",
+  "jobTitle": "PhD student in NLP (University of Edinburgh)",
+  "email": "guillemram97 [AT] gmail [DOT] com",
+  "photo": "assets/guillemrams.6c7b7321.png",
+  "cvLink": "assets/cv_ramirez_guillem.pdf",
+  "scholarLink": "https://scholar.google.com/citations?user=8aFKzr8AAAAJ&hl=en",
+  "twitterLink": "https://twitter.com/guillemram",
+  "githubLink": "https://github.com/guillemram97",
+  "about": "I study how to structure interactions between local and external language models to make AI systems more efficient, private, and reliable. My work focuses on small local models acting as controllers—deciding when to call larger models, how to communicate with them (latent communication), and what information to share. I also have a background in cross-lingual representations, and I enjoy building systems that work across languages. \n\nI’m a PhD student supervised by Ivan Titov and Alexandra Birch, and have interned at FAIR/Meta (Research Scientist), Amazon (Applied Scientist), and MIT. Always happy to chat—currently exploring opportunities for full-time roles in 2027."
+}

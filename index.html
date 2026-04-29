@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <h1 id="site-title">Academic Website</h1>
+        <nav>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section id="introduction" class="card"></section>
+
+      <section id="publications" class="card">
+        <h2>Publications</h2>
+        <div id="publications-list" class="publication-grid"></div>
+      </section>
+
+      <section id="news" class="card">
+        <h2>News</h2>
+        <ul id="news-list" class="news-list"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>© <span id="year"></span> <span id="footer-name">Your Name</span></p>
+    </footer>
+
+    <script src="main.js?v=20260429b"></script>
+  </body>
+</html>

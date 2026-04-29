@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Think LLMs Know You? | El bloc d'en Guillem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .post-wrap { width: min(860px, 92vw); margin: 1.2rem auto 2rem; }
+      .post { background: #fff; border: 1px solid #e1ddd4; border-radius: 12px; padding: 1.2rem; font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif; line-height: 1.6; }
+      .post h1 { margin-top: 0; line-height: 1.2; }
+      .post h2 { margin-top: 1.2rem; margin-bottom: 0.45rem; }
+      .post p { margin: 0.5rem 0; }
+      .post ul { margin: 0.4rem 0 0.8rem 1.1rem; }
+      .post .meta { color: #666; margin-bottom: 0.8rem; }
+      .pipeline-image { width: min(360px, 100%); display: block; margin: 0.5rem auto 0.8rem; border: 1px solid #e1ddd4; border-radius: 10px; }
+    </style>
+  </head>
+  <body>
+    <header class="blog-header wrap">
+      <h1>El bloc d'en Guillem</h1>
+      <nav><a href="/blog/">Back to Blog</a></nav>
+    </header>
+
+    <main class="post-wrap">
+      <article class="post">
+        <h1>You Think LLMs Know You? You're Probably Right - and That's a Problem</h1>
+        <p class="meta">April 29, 2026</p>
+
+        <p>
+          I asked a language model three simple questions:
+        </p>
+        <ul>
+          <li>What's my name?</li>
+          <li>Do I smoke?</li>
+          <li>Who's my celebrity crush?</li>
+        </ul>
+        <p>
+          The answers were unsettlingly accurate, arguably more so than what you'd expect from your doctor,
+          therapist, or even your closest circle.
+        </p>
+
+        <p>
+          Large Language Models (LLMs) are becoming deeply embedded in how we write, think, and communicate.
+          There is still a persistent misconception that interacting with LLMs is stateless or inconsequential.
+          In practice, users routinely <strong>disclose highly sensitive information</strong>, often unintentionally.
+        </p>
+
+        <p>
+          Mireshghallah (2024) highlights the severity of this issue. Analyses of real-world human-LLM
+          interactions reveal that users frequently disclose sensitive information, including financial data,
+          authentication credentials, and deeply personal details about beliefs, habits, and relationships.
+          In our own analysis of the WildChat dataset (Zhao et al., 2024), we identified concerning cases:
+          startup founders sharing internal financial records, individuals drafting legal support letters,
+          and even the exchange of international contracts with large financial implications.
+        </p>
+        <h2>Existing Solutions Fall Short</h2>
+        <p>
+          Most existing approaches rely on prompt sanitization: removing personally identifiable information
+          (PII) before sending queries to external models. This often leads to utility collapse (the prompt
+          loses what made it useful), and assumes one-size-fits-all privacy.
+        </p>
+        <p>
+          But privacy is personal. What is sensitive to one user may be irrelevant to another. Even inside one
+          query, users may want to share some attributes but not others.
+        </p>
+        <p>
+          Traditional PII frameworks also miss a crucial point: <strong>privacy goes beyond explicit identifiers</strong>.
+          Subtle signals such as religion, habits, or parenthood can be equally revealing, especially when combined.
+        </p>
+
+        <h2>Privacy Profiles: Letting Users Define Privacy</h2>
+        <p>
+          To address this, we introduce <strong>privacy profiles</strong>: simple natural-language instructions that specify what a
+          user is willing (or unwilling) to share, e.g., "Don't include anything about my free time" or
+          "I'm okay sharing that I'm a Swiftie".
+        </p>
+        <p>
+          Privacy profiles turn privacy into a user-defined constraint. Conceptually, this aligns with
+          contextual integrity (Nissenbaum, 2009): privacy is preserved when information flows match user
+          expectations and context-specific norms.
+        </p>
+
+        <h2>A Practical Pipeline for Privacy-Preserving LLM Use</h2>
+        <img class="pipeline-image" src="../assets/privacy.png" alt="Privacy-preserving LLM pipeline" />
+        <ul>
+          <li>A lightweight local model receives the original query and the privacy profile.</li>
+          <li>It rewrites the query, removing only disallowed information.</li>
+          <li>A verifier checks whether privacy constraints are satisfied.</li>
+          <li>If not, the query is blocked or handled locally.</li>
+          <li>The sanitized query is sent to a stronger external LLM.</li>
+          <li>A local aggregator reconstructs the final answer to match original intent.</li>
+        </ul>
+
+        <h2>PEEP: A Benchmark for Real-World Privacy</h2>
+        <p>
+          Dataset link:
+          <a href="https://huggingface.co/datasets/guillemram97/PEEP" target="_blank" rel="noopener noreferrer">PEEP on Hugging Face</a>.
+        </p>
+        <p>
+          To evaluate this setup, we introduce PEEP (Prompts, Extracted Entities with Privacy), a large-scale
+          benchmark of 15,000+ real user queries across 64 languages.
+        </p>
+        <p>
+          Each query is annotated with 21 fine-grained private attributes, from hard identifiers (names,
+          identification numbers, phone numbers), to demographics (age, nationality), biographical details
+          (occupation, health status), and softer traits (habits, beliefs, relationships).
+        </p>
+        <p>
+          Each query is paired with a synthetic privacy profile that simulates individual user preferences.
+        </p>
+
+        <h2>PROFIT: Training Models to Respect Your Privacy</h2>
+        <p>
+          We evaluated multiple models in this framework and observed a consistent pattern. LLMs outperform
+          traditional PII tools, but still leak protected information at non-trivial rates, including very
+          large models around 70B parameters. Smaller models face a different challenge: balancing privacy
+          preservation and task performance.
+        </p>
+        <p>
+          Leakage is not uniform. Explicit identifiers (e.g., credit cards, emails) are often protected,
+          while subtle attributes (religion, habits, parenthood) leak much more. This reflects not only
+          detection limitations, but model biases about what is acceptable to disclose.
+        </p>
+        <p>
+          To address this, we introduce PROFIT (PRivacy-Optimised FIltered Training). Rather than naive
+          fine-tuning, PROFIT selects training examples that jointly satisfy privacy and utility constraints,
+          and filters out examples that fail either objective. We then train rewriter, verifier, and aggregator
+          with this curated signal.
+        </p>
+        <p>Key findings:</p>
+        <ul>
+          <li>A fine-tuned 8B model can outperform a 70B model.</li>
+          <li>Leakage of protected attributes drops significantly.</li>
+          <li>Better sharing of authorized information improves answer quality.</li>
+        </ul>
+        <p>
+          In short, <strong>smaller, well-trained models can be both safer and more useful.</strong>
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+          We are entering a world where LLMs can infer deeply personal attributes while users remain unaware of
+          how much they reveal. Our work suggests that the trade-off between advanced LLM capabilities and privacy
+          is not inevitable. Closing the gap will require better models, better tools, and a more realistic view
+          of how people actually use AI.
+        </p>
+        <p>
+          Paper link:
+          <a href="https://arxiv.org/abs/2507.05391" target="_blank" rel="noopener noreferrer">Controlling What You Share</a>.
+        </p>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+:root {
+  --bg: #f3f0ea;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #666;
+  --accent: #0a5f4f;
+  --line: #e1ddd4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #faf7f1 0%, var(--bg) 100%);
+  color: var(--text);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.wrap {
+  width: min(900px, 92vw);
+  margin: 0 auto;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 0;
+}
+
+.blog-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.blog-header a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.posts {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.post {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem;
+}
+
+.post h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.post p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.post a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#blog-description {
+  font-size: 1.05rem;
+}
